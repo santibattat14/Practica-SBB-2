@@ -1,7 +1,7 @@
 ficheroJar := catalogo.jar
 
 limpiar:
-	rm -f $(ficheroJar)	
+	rm -f catalogoJar	
 	rm -rf ../bin
 compilar:limpiar
 
