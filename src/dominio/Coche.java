@@ -8,7 +8,7 @@ public class Coche {
 
 	private String color;
 	private String marca;
-	private int matricula;
+	private String matricula;
 	private int plazas;
 
 	/**
@@ -19,14 +19,6 @@ public class Coche {
 
 	}
 
-	public Coche (String color, String marca, int matricula, int plazas){
-		this.color = color;
-		this.matricula = matricula;
-		this.plazas = plazas;
-		this.marca = marca;
-	}
-		
-
 	/**
 	 * Metodo constructor parmetrizado
 	 * @param color Color del coche
@@ -34,6 +26,15 @@ public class Coche {
 	 * @param plazas Plazas del coche
 	 * @param marca Marca del coche
 	 */
+
+
+	public Coche (String color, String marca, String matricula, int plazas){
+		this.color = color;
+		this.matricula = matricula;
+		this.plazas = plazas;
+		this.marca = marca;
+	}
+		
 
 
 	/**
@@ -48,7 +49,7 @@ public class Coche {
 		return this.color;
 	}
 
-	public int getMatricula () {
+	public String getMatricula () {
 		return this.matricula;
 	}
 
@@ -73,7 +74,7 @@ public class Coche {
 		this.color = color;
 	}
 
-	public void setMatricula (int matricula){
+	public void setMatricula (String matricula){
 		this.matricula = matricula;
 	}
 

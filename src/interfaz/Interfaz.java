@@ -1,31 +1,40 @@
 package interfaz;
 import dominio.*;
 
-/*
 
-*/
 public class Interfaz {
-	public void procesarPeticion (String marca, String color, String matricula, String plazas){
+	public void procesarPeticion (String[] comandos){
 
 
-		/**
-		System.out.println(" posicion 1: " + marca);
-		System.out.println(" posicion 2: " + color);
-		System.out.println(" posicion 3: " + matricula);
-		System.out.println(" posicion 4: " + plazas);
-		*/
 		
 		Coche coche_1 = new Coche();
-		coche_1.setMarca (marca);
-		coche_1.setColor (color);
-		coche_1.setMatricula (Integer.parseInt(matricula));
-		coche_1.setPlazas (Integer.parseInt(plazas));
+		coche_1.setMarca (comandos[1]);
+		coche_1.setColor (comandos[2]);
+		coche_1.setMatricula (comandos[3]);
+		coche_1.setPlazas (Integer.parseInt(comandos[4]));
+		
 
 		Catalogo lista_de_coches = new Catalogo();
 
-		lista_de_coches.annadirCoche(coche_1);
+		System.out.println("Entramos interfaz");
 
-		//lista_de_coches.getCoche_1();
+		if (comandos[0].equals("add")){
+			lista_de_coches.annadirCoche(coche_1);
+			System.out.println("añadir coche");
+
+		}
+		else if (comandos[0].equals("remove")){
+			lista_de_coches.borrarCoche(coche_1);
+			System.out.println("borramos coche");
+		}
+		
+		//ejemplo comando modificar mercedes blanco 123 7
+		else if (comandos[0].equals("modify")){
+			lista_de_coches.borrarCoche(coche_1);
+			lista_de_coches.annadirCoche(coche_1);
+			System.out.println("modificamos coche");
+		}
+		
 
 	}
 
